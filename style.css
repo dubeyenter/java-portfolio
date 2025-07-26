@@ -3,54 +3,91 @@ html {
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background: url('https://images.pexels.com/photos/1591061/pexels-photo-1591061.jpeg') no-repeat center center fixed;
+    background: url('https://images.pexels.com/photos/1591056/pexels-photo-1591056.jpeg') no-repeat center center fixed;
     background-size: cover;
-    color: #333;
+    color: #ffffff;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    background: rgba(30, 58, 138, 0.9); /* Glassmorphism */
+    backdrop-filter: blur(10px);
+    padding: 15px 0;
+    z-index: 1000;
+    animation: fadeInDown 1s ease-out;
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.navbar a {
+    color: #06b6d4;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1em;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #ffffff;
+    transform: scale(1.1);
 }
 
 .container {
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.95); /* Semi-transparent white for readability */
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.1); /* Glassmorphism */
+    backdrop-filter: blur(8px);
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1;
 }
 
 .header {
     text-align: center;
-    padding: 60px 0;
-    background: linear-gradient(135deg, #2c3e50, #3498db);
-    color: white;
-    border-radius: 0 0 20px 20px;
-    animation: bounceIn 1.2s ease-out;
+    padding: 80px 0;
+    background: linear-gradient(135deg, #1e3a8a, #06b6d4);
+    border-radius: 0 0 30px 30px;
+    animation: zoomIn 1.5s ease-out;
 }
 
 .header h1 {
     margin: 0;
-    font-size: 3em;
+    font-size: 3.5em;
     font-weight: 900;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
 }
 
 .header p {
-    margin: 10px 0;
-    font-size: 1.3em;
+    margin: 15px 0;
+    font-size: 1.4em;
 }
 
 .section {
-    margin: 50px 0;
+    margin: 60px 0;
+    transform: translateZ(0); /* For parallax */
 }
 
 .section h2 {
-    font-size: 2em;
+    font-size: 2.2em;
     font-weight: 700;
-    color: #2c3e50;
-    border-bottom: 3px solid #3498db;
-    padding-bottom: 10px;
+    color: #06b6d4;
+    border-bottom: 3px solid #ffffff;
+    padding-bottom: 12px;
     animation: fadeIn 1.5s ease-in;
 }
 
@@ -59,81 +96,80 @@ body {
     padding: 0;
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 20px;
 }
 
 .skills li {
-    background: #3498db;
-    color: white;
-    padding: 12px 18px;
-    border-radius: 25px;
+    background: rgba(6, 182, 212, 0.8);
+    color: #ffffff;
+    padding: 15px 20px;
+    border-radius: 30px;
     font-weight: 700;
-    transition: transform 0.3s ease, background 0.3s ease;
+    box-shadow: 0 0 15px rgba(6, 182, 212, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .skills li:hover {
-    transform: scale(1.15) rotate(5deg);
-    background: #2980b9;
+    transform: scale(1.2) rotate(3deg);
+    box-shadow: 0 0 25px rgba(6, 182, 212, 1);
 }
 
 .education, .project {
-    background: #fff;
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    margin-bottom: 25px;
-    animation: pulse 1.5s ease-out;
+    background: rgba(255, 255, 255, 0.15); /* Glassmorphism */
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+    animation: fadeInUp 1.5s ease-out;
 }
 
 .education h3, .project h3 {
     margin: 0 0 15px;
-    font-size: 1.7em;
-    color: #2c3e50;
+    font-size: 1.8em;
+    color: #06b6d4;
 }
 
 .resume a, .contact a {
-    color: #3498db;
+    color: #06b6d4;
     text-decoration: none;
     font-weight: 700;
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .resume a:hover, .contact a:hover {
-    color: #2980b9;
-    transform: scale(1.05);
+    color: #ffffff;
+    transform: scale(1.1);
 }
 
 .btn {
     display: inline-block;
-    padding: 10px 20px;
-    background: #3498db;
-    color: white;
-    border-radius: 25px;
-    transition: background 0.3s ease, transform 0.3s ease;
+    padding: 12px 25px;
+    background: #06b6d4;
+    color: #ffffff;
+    border-radius: 30px;
+    box-shadow: 0 0 15px rgba(6, 182, 212, 0.5);
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .btn:hover {
-    background: #2980b9;
-    transform: scale(1.1);
+    background: #1e3a8a;
+    transform: scale(1.15);
+    box-shadow: 0 0 25px rgba(6, 182, 212, 1);
 }
 
 footer {
     text-align: center;
-    padding: 25px;
-    background: linear-gradient(135deg, #2c3e50, #3498db);
-    color: white;
-    border-radius: 20px 20px 0 0;
+    padding: 30px;
+    background: linear-gradient(135deg, #1e3a8a, #06b6d4);
+    border-radius: 30px 30px 0 0;
     animation: fadeIn 1.5s ease-in;
 }
 
-@keyframes bounceIn {
+@keyframes zoomIn {
     0% {
-        transform: scale(0.3);
+        transform: scale(0.5);
         opacity: 0;
-    }
-    50% {
-        transform: scale(1.05);
-        opacity: 0.7;
     }
     100% {
         transform: scale(1);
@@ -141,35 +177,35 @@ footer {
     }
 }
 
-@keyframes pulse {
+@keyframes fadeInDown {
     0% {
-        transform: scale(0.95);
-        opacity: 0.7;
-    }
-    50% {
-        transform: scale(1.05);
-        opacity: 1;
+        transform: translateY(-50px);
+        opacity: 0;
     }
     100% {
-        transform: scale(1);
+        transform: translateY(0);
         opacity: 1;
     }
 }
 
 @media (max-width: 600px) {
     .container {
-        padding: 15px;
+        padding: 20px;
     }
     .header h1 {
-        font-size: 2em;
+        font-size: 2.5em;
     }
     .header p {
-        font-size: 1.1em;
+        font-size: 1.2em;
     }
     .section h2 {
-        font-size: 1.6em;
+        font-size: 1.8em;
     }
     .education h3, .project h3 {
-        font-size: 1.4em;
+        font-size: 1.5em;
+    }
+    .navbar ul {
+        flex-direction: column;
+        gap: 10px;
     }
 }
