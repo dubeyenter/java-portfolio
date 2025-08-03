@@ -1,129 +1,180 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="student-register-page">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pradumna Dubey - Java Developer Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <title>Pradumna Dubey - Portfolio</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: 'Inter', 'Roboto', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        :root {
+            --bg: #0d1117;
+            --text: #ffffff;
+            --highlight: #00FF99;
+        }
+        .light-mode {
+            --bg: #ffffff;
+            --text: #000000;
+        }
+        .navbar, footer {
+            background-color: var(--bg);
+        }
+        .navbar-brand, .nav-link, footer p, .section-title, .typed-text {
+            color: var(--highlight) !important;
+        }
+        .nav-link:hover {
+            color: #ffffff !important;
+        }
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://source.unsplash.com/random/1920x1080/?tech') no-repeat center center/cover;
+        }
+        .typed-text {
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+        .skill-circle {
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            border-radius: 50%;
+            background: conic-gradient(var(--highlight) var(--percent), #3A506B 0);
+            text-align: center;
+            font-weight: 600;
+            margin: 0 auto;
+            color: var(--text);
+        }
+        .toggle-mode {
+            position: absolute;
+            right: 20px;
+            top: 15px;
+        }
+    </style>
 </head>
 <body>
-<nav class="navbar">
-    <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#resume">Resume</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
-</nav>
+<!-- Dark/Light Mode Toggle -->
+<button class="btn btn-outline-light toggle-mode" onclick="document.body.classList.toggle('light-mode')">Toggle Mode</button>
 
-<div class="header animate__animated animate__zoomIn">
-    <h1>Pradumna Dubey</h1>
-    <p><span id="typed"></span></p>
-    <p class="animate__animated animate__fadeInUp">
-        Email: <a href="mailto:dubeyenter@gmail.com">dubeyenter@gmail.com</a> |
-        Phone: +91 9667641449 |
-        <a href="https://www.linkedin.com/in/pradumna-dubey">LinkedIn</a>
-    </p>
-</div>
-
-<div class="container">
-    <div class="section about animate__animated animate__fadeInUp" id="about">
-        <h2>About Me</h2>
-        <p>MCA student specializing in Java, JDBC, Servlets, and Oracle SQL. Experienced in developing RESTful backend systems, including the Student Portal System. Passionate about building scalable software solutions and eager to contribute to innovative projects.</p>
-    </div>
-
-    <div class="section skills animate__animated animate__fadeInUp" id="skills">
-        <h2>Skills</h2>
-        <ul>
-            <li>Java</li>
-            <li>C</li>
-            <li>Oracle SQL</li>
-            <li>JDBC</li>
-            <li>Servlets</li>
-            <li>REST API</li>
-            <li>OOP</li>
-            <li>Git</li>
-            <li>Maven</li>
-            <li>JUnit</li>
-            <li>IntelliJ IDEA</li>
-            <li>Eclipse</li>
-            <li>VS Code</li>
-        </ul>
-    </div>
-
-    <div class="section education animate__animated animate__fadeInUp" id="education">
-        <h2>Education</h2>
-        <div class="education">
-            <h3>Master of Computer Applications (MCA)</h3>
-            <p>Rajiv Gandhi Proudyogiki Vishwavidyalaya, Khargone</p>
-            <p>Aug 2023 - Jul 2025</p>
-        </div>
-        <div class="education">
-            <h3>Bachelor of Science (Computer Science)</h3>
-            <p>Jiwaji University, Gwalior</p>
-            <p>Jul 2019 - Jul 2022 | Percentage: 85%</p>
-        </div>
-        <div class="education">
-            <h3>Higher Secondary (12th)</h3>
-            <p>M.P. Board, Gwalior</p>
-            <p>Mar 2014 - Apr 2015 | CGPA: 58.80%</p>
-        </div>
-        <div class="education">
-            <h3>High School (10th)</h3>
-            <p>C.B.S.E., Gwalior</p>
-            <p>Mar 2012 - Apr 2013 | CGPA: 7.0</p>
-        </div>
-    </div>
-
-    <div class="section projects animate__animated animate__fadeInUp" id="projects">
-        <h2>Projects</h2>
-        <div class="project">
-            <h3>Student Portal System - Backend Developer</h3>
-            <p>Developed a RESTful student management system using Java Servlets and JDBC, integrated with an Oracle SQL database.</p>
-            <ul>
-                <li>Designed and normalized Oracle SQL database schema for efficient data management.</li>
-                <li>Implemented backend logic with Servlets, adhering to RESTful design principles (GET, POST).</li>
-                <li>Optimized SQL queries to enhance system reliability and data retrieval performance.</li>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">Pradumna Dubey</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
             </ul>
         </div>
     </div>
+</nav>
 
-    <div class="section resume animate__animated animate__fadeInUp" id="resume">
-        <h2>Resume</h2>
-        <p><a href="Pradumna_Dubey_Java_Resume.pdf" target="_blank" class="btn">Download Resume (PDF)</a></p>
+<!-- Hero Section -->
+<section id="home" class="hero-section">
+    <div class="container" data-aos="fade-up">
+        <img src="assets/images/profile.jpg" alt="Pradumna Dubey" class="rounded-circle mb-4 shadow" width="150">
+        <h1 class="display-3">Pradumna Dubey</h1>
+        <p class="lead"><span class="typed-text"></span></p>
+        <a href="Pradumna Dubey_Java-Resume.pdf" class="btn btn-outline-light btn-lg mt-3" download>Download Resume</a>
     </div>
+</section>
 
-    <div class="section contact animate__animated animate__fadeInUp" id="contact">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:dubeyenter@gmail.com">dubeyenter@gmail.com</a></p>
-        <p>Phone: +91 9667641449</p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/pradumna-dubey">linkedin.com/in/pradumna-dubey</a></p>
+<!-- Tech Stack Section -->
+<section class="py-5" id="skills">
+    <div class="container" data-aos="fade-up">
+        <h2 class="section-title text-center">Tech Stack</h2>
+        <div class="row text-center">
+            <div class="col-4 col-md-2 mb-4">Java</div>
+            <div class="col-4 col-md-2 mb-4">JDBC</div>
+            <div class="col-4 col-md-2 mb-4">SQL</div>
+            <div class="col-4 col-md-2 mb-4">REST API</div>
+            <div class="col-4 col-md-2 mb-4">Servlets</div>
+            <div class="col-4 col-md-2 mb-4">Git</div>
+            <div class="col-4 col-md-2 mb-4">Maven</div>
+            <div class="col-4 col-md-2 mb-4">JUnit</div>
+            <div class="col-4 col-md-2 mb-4">IntelliJ</div>
+        </div>
     </div>
-</div>
+</section>
 
-<footer>
-    <p>&copy; 2025 Pradumna Dubey. All rights reserved.</p>
+<!-- Certifications Section -->
+<section id="certifications" class="py-5 bg-dark">
+    <div class="container" data-aos="fade-up">
+        <h2 class="section-title text-center">Certifications</h2>
+        <ul>
+            <li>AWS Fundamentals – AWS Training and Certification</li>
+            <li>Java (Basic), SQL (Basic and Intermediate) – HackerRank</li>
+            <li>Java Practice, C Programming Basics – LinkedIn Learning</li>
+            <li>Intro to AI, Deep Learning, NLP – Infosys Springboard</li>
+            <li>Cybersecurity Foundations – LinkedIn Learning</li>
+        </ul>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-5">
+    <div class="container" data-aos="fade-up">
+        <h2 class="section-title text-center">Get in Touch</h2>
+        <div class="row text-center">
+            <div class="col-md-3 col-6 mb-3">
+                <a href="https://github.com/dubeyenter" target="_blank" class="contact-link">
+                    <i class="fab fa-github fa-2x"></i><p>GitHub</p></a>
+            </div>
+            <div class="col-md-3 col-6 mb-3">
+                <a href="https://linkedin.com/in/pradumna-dubey/" target="_blank" class="contact-link">
+                    <i class="fab fa-linkedin fa-2x"></i><p>LinkedIn</p></a>
+            </div>
+            <div class="col-md-3 col-6 mb-3">
+                <a href="mailto:dubeyenter@gmail.com" class="contact-link">
+                    <i class="fas fa-envelope fa-2x"></i><p>Email</p></a>
+            </div>
+            <div class="col-md-3 col-6 mb-3">
+                <a href="https://leetcode.com/u/Pradumna_dubey/" target="_blank" class="contact-link">
+                    <i class="fas fa-code fa-2x"></i><p>LeetCode</p></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="text-center py-3">
+    <p>&copy; 2025 Pradumna Dubey. Built with Passion.</p>
 </footer>
 
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 <script>
-    // Typed.js for typing animation
-    var typed = new Typed('#typed', {
-        strings: ['Aspiring Java Developer', 'Backend Enthusiast', 'Tech Innovator'],
-        typeSpeed: 50,
-        backSpeed: 30,
+    AOS.init({ duration: 1000, once: true });
+    var typed = new Typed('.typed-text', {
+        strings: ['Aspiring Java Developer', 'Backend Enthusiast', 'Tech Innovator', 'Code Crafter'],
+        typeSpeed: 100,
+        backSpeed: 50,
         loop: true
     });
-
-    // Scroll fix on refresh
-    window.onbeforeunload = function () {
-        window.scrollTo(0, 0);
-    };
 </script>
 </body>
 </html>
-
