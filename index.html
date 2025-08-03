@@ -27,11 +27,13 @@
             color: var(--text-light);
         }
         section {
-            border: 1px solid #00FF99;
-            border-radius: 12px;
-            margin-bottom: 2rem;
+            max-width: 900px;
+            margin: 3rem auto;
             padding: 2rem;
-            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--highlight);
+            box-shadow: 0 0 10px rgba(0,255,153,0.1);
         }
         .navbar, footer {
             background-color: transparent;
@@ -47,6 +49,14 @@
         .typed-text {
             font-size: 1.5rem;
             color: var(--highlight);
+            min-height: 32px;
+            display: inline-block;
+        }
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)),
+            url('assets/images/hero-bg.jpg') no-repeat center center/cover;
+            padding: 6rem 2rem;
+            text-align: center;
         }
     </style>
 </head>
@@ -69,11 +79,11 @@
         </div>
     </div>
 </nav>
-<section id="home" class="text-center">
-    <img src="assets/images/profile.jpg" alt="Pradumna Dubey" class="rounded-circle mb-3" width="150">
+<section id="home" class="hero-section">
+    <img src="images/pradumna dubey pp.jpg" alt="Pradumna Dubey" class="rounded-circle mb-3" width="150">
     <h1 class="display-3">Pradumna Dubey</h1>
     <p class="typed-text"></p>
-    <a href="assets/resume.pdf" class="btn btn-outline-light mt-3" download>📄 Download Resume</a>
+    <a href="Pradumna Dubey_Java-Resume.pdf" class="btn btn-outline-light mt-3" download>📄 Download Resume</a>
 </section>
 <section id="about">
     <h2 class="section-title text-center">About Me</h2>
@@ -97,14 +107,26 @@
         <li><strong>Customer Support Associate</strong> – Amazon India (Jul 2022 – Dec 2022)<br>📞 Handled customer queries effectively and improved team coordination and response times.</li>
     </ul>
 </section>
-<section id="interests">
-    <h2 class="section-title text-center">Interests</h2>
-    <ul>
-        <li>✈️ Travelling</li>
-        <li>🚘 Long interstate drives</li>
-        <li>🏊 Swimming</li>
-        <li>🧠 Tech-savvy with deep curiosity about how things work</li>
-    </ul>
+<section id="projects">
+    <h2 class="section-title text-center">Projects</h2>
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <div class="card bg-dark text-light h-100 border-success">
+                <div class="card-body">
+                    <h5 class="card-title">Student Portal System</h5>
+                    <p class="card-text">🔧 Built with Java, JDBC & Oracle SQL. Implements secure student registration, login, and academic data management.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div class="card bg-dark text-light h-100 border-success">
+                <div class="card-body">
+                    <h5 class="card-title">Expense Tracker App</h5>
+                    <p class="card-text">📊 Java-based tracking app that handles personal expenses, summaries, and categorization using file handling and SQL.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 <section id="certifications">
     <h2 class="section-title text-center">Certifications</h2>
@@ -114,6 +136,15 @@
         <li>✅ C, Java Practice – LinkedIn Learning</li>
         <li>✅ AI, Deep Learning, NLP – Infosys Springboard</li>
         <li>✅ Cybersecurity Foundations – LinkedIn Learning</li>
+    </ul>
+</section>
+<section id="interests">
+    <h2 class="section-title text-center">Interests</h2>
+    <ul>
+        <li>✈️ Travelling</li>
+        <li>🚘 Long interstate drives</li>
+        <li>🏊 Swimming</li>
+        <li>🧠 Tech-savvy with deep curiosity about how things work</li>
     </ul>
 </section>
 <section id="contact">
