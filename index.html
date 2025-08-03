@@ -1,178 +1,150 @@
 <!DOCTYPE html>
-<html lang="en" class="student-register-page">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pradumna Dubey - Portfolio</title>
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- AOS Animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <!-- Custom CSS -->
     <style>
-        body {
-            font-family: 'Inter', 'Roboto', sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
         :root {
-            --bg: #0d1117;
-            --text: #ffffff;
+            --bg-dark: #0d1117;
+            --bg-light: #ffffff;
+            --text-dark: #ffffff;
+            --text-light: #000000;
             --highlight: #00FF99;
         }
-        .light-mode {
-            --bg: #ffffff;
-            --text: #000000;
+        body {
+            font-family: 'Inter', 'Roboto', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-dark);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        body.light-mode {
+            background-color: var(--bg-light);
+            color: var(--text-light);
+        }
+        section {
+            border: 1px solid #00FF99;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            padding: 2rem;
+            background-color: rgba(0, 0, 0, 0.2);
         }
         .navbar, footer {
-            background-color: var(--bg);
+            background-color: transparent;
         }
-        .navbar-brand, .nav-link, footer p, .section-title, .typed-text {
+        .navbar-brand, .nav-link, footer p, .section-title {
             color: var(--highlight) !important;
         }
-        .nav-link:hover {
-            color: #ffffff !important;
-        }
-        .hero-section {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://source.unsplash.com/random/1920x1080/?tech') no-repeat center center/cover;
+        .toggle-mode {
+            position: fixed;
+            top: 10px;
+            right: 10px;
         }
         .typed-text {
             font-size: 1.5rem;
-            font-weight: 500;
-        }
-        .skill-circle {
-            width: 100px;
-            height: 100px;
-            line-height: 100px;
-            border-radius: 50%;
-            background: conic-gradient(var(--highlight) var(--percent), #3A506B 0);
-            text-align: center;
-            font-weight: 600;
-            margin: 0 auto;
-            color: var(--text);
-        }
-        .toggle-mode {
-            position: absolute;
-            right: 20px;
-            top: 15px;
+            color: var(--highlight);
         }
     </style>
 </head>
 <body>
-<!-- Dark/Light Mode Toggle -->
-<button class="btn btn-outline-light toggle-mode" onclick="document.body.classList.toggle('light-mode')">Toggle Mode</button>
-
-<!-- Navbar -->
+<button class="btn btn-outline-light toggle-mode" onclick="document.body.classList.toggle('light-mode')">🌙 Toggle Mode</button>
 <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container">
         <a class="navbar-brand" href="#">Pradumna Dubey</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+                <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
                 <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
                 <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
+                <li class="nav-item"><a class="nav-link" href="#interests">Interests</a></li>
                 <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
             </ul>
         </div>
     </div>
 </nav>
-
-<!-- Hero Section -->
-<section id="home" class="hero-section">
-    <div class="container" data-aos="fade-up">
-        <img src="assets/images/profile.jpg" alt="Pradumna Dubey" class="rounded-circle mb-4 shadow" width="150">
-        <h1 class="display-3">Pradumna Dubey</h1>
-        <p class="lead"><span class="typed-text"></span></p>
-        <a href="Pradumna Dubey_Java-Resume.pdf" class="btn btn-outline-light btn-lg mt-3" download>Download Resume</a>
-    </div>
+<section id="home" class="text-center">
+    <img src="assets/images/profile.jpg" alt="Pradumna Dubey" class="rounded-circle mb-3" width="150">
+    <h1 class="display-3">Pradumna Dubey</h1>
+    <p class="typed-text"></p>
+    <a href="assets/resume.pdf" class="btn btn-outline-light mt-3" download>📄 Download Resume</a>
 </section>
-
-<!-- Tech Stack Section -->
-<section class="py-5" id="skills">
-    <div class="container" data-aos="fade-up">
-        <h2 class="section-title text-center">Tech Stack</h2>
-        <div class="row text-center">
-            <div class="col-4 col-md-2 mb-4">Java</div>
-            <div class="col-4 col-md-2 mb-4">JDBC</div>
-            <div class="col-4 col-md-2 mb-4">SQL</div>
-            <div class="col-4 col-md-2 mb-4">REST API</div>
-            <div class="col-4 col-md-2 mb-4">Servlets</div>
-            <div class="col-4 col-md-2 mb-4">Git</div>
-            <div class="col-4 col-md-2 mb-4">Maven</div>
-            <div class="col-4 col-md-2 mb-4">JUnit</div>
-            <div class="col-4 col-md-2 mb-4">IntelliJ</div>
+<section id="about">
+    <h2 class="section-title text-center">About Me</h2>
+    <p>👋 Hi! I'm <strong>Pradumna Dubey</strong>, an aspiring Java Developer with a passion for building clean, scalable backend systems. With a strong foundation in Java, JDBC, and SQL, I’ve engineered robust solutions like Student Portals and Expense Trackers.</p>
+    <p>🚗 When I’m not coding, you’ll find me on long interstate drives, exploring new places 🗺️, or diving into the mechanics of how things work ⚙️ — yes, I’m that tech-savvy friend who reads manuals for fun!</p>
+    <p>💡 My goal? To turn complex problems into simple, efficient solutions while constantly learning and evolving.</p>
+</section>
+<section id="education">
+    <h2 class="section-title text-center">Education</h2>
+    <ul>
+        <li><strong>MCA</strong>, Rajiv Gandhi Proudyogiki Vishwavidyalaya – 2023–2025 (CGPA: 7.97)</li>
+        <li><strong>B.Sc (CS)</strong>, Jiwaji University – 2019–2022 (83.12%)</li>
+        <li><strong>12th</strong>, M.P. Board – 2015 (58.80%)</li>
+        <li><strong>10th</strong>, C.B.S.E – 2013 (CGPA: 7.0)</li>
+    </ul>
+</section>
+<section id="experience">
+    <h2 class="section-title text-center">Experience</h2>
+    <ul>
+        <li><strong>Product Expert</strong> – Uprising Science Pvt Ltd (Apr 2023 – Aug 2023)<br>🚀 Delivered client solutions under pressure, improved customer satisfaction, and resolved issues swiftly.</li>
+        <li><strong>Customer Support Associate</strong> – Amazon India (Jul 2022 – Dec 2022)<br>📞 Handled customer queries effectively and improved team coordination and response times.</li>
+    </ul>
+</section>
+<section id="interests">
+    <h2 class="section-title text-center">Interests</h2>
+    <ul>
+        <li>✈️ Travelling</li>
+        <li>🚘 Long interstate drives</li>
+        <li>🏊 Swimming</li>
+        <li>🧠 Tech-savvy with deep curiosity about how things work</li>
+    </ul>
+</section>
+<section id="certifications">
+    <h2 class="section-title text-center">Certifications</h2>
+    <ul>
+        <li>✅ AWS Fundamentals – AWS Training</li>
+        <li>✅ Java, SQL (Basic/Intermediate) – HackerRank</li>
+        <li>✅ C, Java Practice – LinkedIn Learning</li>
+        <li>✅ AI, Deep Learning, NLP – Infosys Springboard</li>
+        <li>✅ Cybersecurity Foundations – LinkedIn Learning</li>
+    </ul>
+</section>
+<section id="contact">
+    <h2 class="section-title text-center">Contact Me</h2>
+    <form action="https://formspree.io/f/xknlwgve" method="POST" class="row g-3">
+        <div class="col-md-6">
+            <input type="text" class="form-control" name="name" placeholder="Your Name" required>
         </div>
-    </div>
-</section>
-
-<!-- Certifications Section -->
-<section id="certifications" class="py-5 bg-dark">
-    <div class="container" data-aos="fade-up">
-        <h2 class="section-title text-center">Certifications</h2>
-        <ul>
-            <li>AWS Fundamentals – AWS Training and Certification</li>
-            <li>Java (Basic), SQL (Basic and Intermediate) – HackerRank</li>
-            <li>Java Practice, C Programming Basics – LinkedIn Learning</li>
-            <li>Intro to AI, Deep Learning, NLP – Infosys Springboard</li>
-            <li>Cybersecurity Foundations – LinkedIn Learning</li>
-        </ul>
-    </div>
-</section>
-
-<!-- Contact Section -->
-<section id="contact" class="py-5">
-    <div class="container" data-aos="fade-up">
-        <h2 class="section-title text-center">Get in Touch</h2>
-        <div class="row text-center">
-            <div class="col-md-3 col-6 mb-3">
-                <a href="https://github.com/dubeyenter" target="_blank" class="contact-link">
-                    <i class="fab fa-github fa-2x"></i><p>GitHub</p></a>
-            </div>
-            <div class="col-md-3 col-6 mb-3">
-                <a href="https://linkedin.com/in/pradumna-dubey/" target="_blank" class="contact-link">
-                    <i class="fab fa-linkedin fa-2x"></i><p>LinkedIn</p></a>
-            </div>
-            <div class="col-md-3 col-6 mb-3">
-                <a href="mailto:dubeyenter@gmail.com" class="contact-link">
-                    <i class="fas fa-envelope fa-2x"></i><p>Email</p></a>
-            </div>
-            <div class="col-md-3 col-6 mb-3">
-                <a href="https://leetcode.com/u/Pradumna_dubey/" target="_blank" class="contact-link">
-                    <i class="fas fa-code fa-2x"></i><p>LeetCode</p></a>
-            </div>
+        <div class="col-md-6">
+            <input type="email" class="form-control" name="email" placeholder="Your Email" required>
         </div>
-    </div>
+        <div class="col-12">
+            <textarea class="form-control" name="message" rows="5" placeholder="Your Message" required></textarea>
+        </div>
+        <div class="col-12 text-center">
+            <button type="submit" class="btn btn-outline-light">Send Message</button>
+        </div>
+    </form>
 </section>
-
-<footer class="text-center py-3">
-    <p>&copy; 2025 Pradumna Dubey. Built with Passion.</p>
+<footer class="text-center">
+    <p>&copy; 2025 Pradumna Dubey. Built with ❤️ and ☕.</p>
 </footer>
-
-<!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 <script>
-    AOS.init({ duration: 1000, once: true });
-    var typed = new Typed('.typed-text', {
-        strings: ['Aspiring Java Developer', 'Backend Enthusiast', 'Tech Innovator', 'Code Crafter'],
-        typeSpeed: 100,
-        backSpeed: 50,
+    AOS.init();
+    new Typed('.typed-text', {
+        strings: ['Aspiring Java Developer', 'Backend Enthusiast', 'Tech Explorer', 'Problem Solver'],
+        typeSpeed: 80,
+        backSpeed: 40,
         loop: true
     });
 </script>
